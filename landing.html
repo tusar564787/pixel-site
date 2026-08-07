@@ -1,104 +1,112 @@
-.stat strong {
-      display: block;
-      font-size: 25px;
-      color: #ffb347;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EARN WITH SANJU</title>
 
-    .stat span {
-      display: block;
-      margin-top: 5px;
-      color: #837b8d;
-      font-size: 12px;
-      letter-spacing: 1px;
-    }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
-    footer {
-      color: #777080;
-      font-size: 13px;
-      line-height: 1.8;
-      padding-bottom: 20px;
-    }
+body{
+background:#0f172a;
+color:#fff;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+}
 
-    @media(max-width:380px) {
-      h1 { font-size: 29px; }
-      .profile { width: 165px; height: 165px; }
-    }
-  </style>
+.card{
+background:#1e293b;
+width:100%;
+max-width:420px;
+border-radius:20px;
+padding:30px;
+text-align:center;
+box-shadow:0 0 20px rgba(0,255,150,.2);
+}
+
+img{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid #22c55e;
+margin-bottom:15px;
+}
+
+h1{
+font-size:28px;
+margin-bottom:10px;
+}
+
+p{
+color:#cbd5e1;
+margin-bottom:20px;
+}
+
+#timer{
+font-size:30px;
+font-weight:bold;
+color:#22c55e;
+margin:15px 0;
+}
+
+a.button{
+display:block;
+background:#22c55e;
+color:#fff;
+text-decoration:none;
+padding:15px;
+border-radius:10px;
+font-size:18px;
+font-weight:bold;
+margin-top:20px;
+}
+
+a.button:hover{
+background:#16a34a;
+}
+</style>
+
 </head>
-
 <body>
 
-  <main class="container">
+<div class="card">
 
-    <div class="live">● LIVE NOW</div>
+<img src="profile.jpg" alt="Profile">
 
-    <div class="profile">
-      <img src="photo_63186880041507722368_x.jpg" alt="Profile">
-    </div>
+<h1>𝗘𝗔𝗥𝗡 𝗪𝗜𝗧𝗛 𝗦𝗔𝗡𝗝𝗨</h1>
 
-    <h1>𝗘𝗔𝗥𝗡 𝗪𝗜𝗧𝗛 𝗦𝗔𝗡𝗝𝗨</h1>
+<p>Welcome to our community.</p>
 
-    <div class="crown">♛</div>
+<div id="timer">00:30</div>
 
-    <p class="subtitle">Your Premium Community Destination ✨</p>
+<a class="button" href="https://t.me/+Th0VfpFnsc44NTY1" target="_blank">
+JOIN NOW
+</a>
 
-    <div class="line"></div>
+</div>
 
-    <a
-      class="join"
-      href="https://t.me/+Th0VfpFnsc44NTY1"
-      target="_blank"
-      rel="noopener"
-      onclick="fbq('track','Lead');"
-    >
-      JOIN NOW
-    </a>
+<script>
+let time=30;
+const timer=document.getElementById("timer");
 
-    <section class="card">
-      <div class="card-title">TIME LEFT FOR FREE JOIN</div>
-
-      <div class="timer" id="timer">00:30</div>
-
-      <p class="small">
-        Offer starts counting down as soon as you open the page.
-      </p>
-    </section>
-
-    <section class="stats">
-      <div class="stat">
-        <strong>50K+</strong>
-        <span>MEMBERS</span>
-      </div>
-
-      <div class="stat">
-        <strong>24/7</strong>
-        <span>SUPPORT</span>
-      </div>
-
-      <div class="stat">
-        <strong>100%</strong>
-        <span>SECURE</span>
-      </div>
-    </section>
-
-    <footer>
-      © 2026 All rights reserved.<br>
-      EARN WITH SANJU
-    </footer>
-
-  </main>
-
-  <script>
-    let time = 30;
-    const timer = document.getElementById("timer");
-
-    setInterval(() => {
-      if (time > 0) time--;
-
-      const seconds = String(time).padStart(2, "0");
-      timer.textContent = "00:" + seconds;
-    }, 1000);
-  </script>
+setInterval(()=>{
+if(time>0){
+time--;
+}
+let sec=String(time).padStart(2,"0");
+timer.innerHTML="00:"+sec;
+},1000);
+</script>
 
 </body>
 </html>
