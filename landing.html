@@ -1,111 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EARN WITH SANJU</title>
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:#0f172a;
-color:#fff;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-padding:20px;
-}
-
-.card{
-background:#1e293b;
-width:100%;
-max-width:420px;
-border-radius:20px;
-padding:30px;
-text-align:center;
-box-shadow:0 0 20px rgba(0,255,150,.2);
-}
-
-img{
-width:120px;
-height:120px;
-border-radius:50%;
-object-fit:cover;
-border:4px solid #22c55e;
-margin-bottom:15px;
-}
-
-h1{
-font-size:28px;
-margin-bottom:10px;
-}
-
-p{
-color:#cbd5e1;
-margin-bottom:20px;
-}
-
-#timer{
-font-size:30px;
-font-weight:bold;
-color:#22c55e;
-margin:15px 0;
-}
-
-a.button{
-display:block;
-background:#22c55e;
-color:#fff;
-text-decoration:none;
-padding:15px;
-border-radius:10px;
-font-size:18px;
-font-weight:bold;
-margin-top:20px;
-}
-
-a.button:hover{
-background:#16a34a;
+.logo{
+        width:95px;
+        height:95px;
+        font-size:42px;
+    }
 }
 </style>
-
 </head>
+
 <body>
 
 <div class="card">
 
-<img src="profile.jpg" alt="Profile">
+    <div class="logo">S</div>
 
-<h1>𝗘𝗔𝗥𝗡 𝗪𝗜𝗧𝗛 𝗦𝗔𝗡𝗝𝗨</h1>
+    <h1>EARN WITH SANJU</h1>
 
-<p>Welcome to our community.</p>
+    <div class="line"></div>
 
-<div id="timer">00:30</div>
+    <p class="subtitle">
+        Welcome to our community.<br>
+        Join us and stay connected with the latest updates.
+    </p>
 
-<a class="button" href="https://t.me/+Th0VfpFnsc44NTY1" target="_blank">
-JOIN NOW
-</a>
+    <div class="badge">
+        ✦ OFFICIAL COMMUNITY ✦
+    </div>
+
+    <div class="timer-box">
+        <div class="timer-title">
+            JOIN NOW — TIME LEFT
+        </div>
+
+        <div id="timer">00:30</div>
+    </div>
+
+    <a
+        class="button"
+        href="https://t.me/+Th0VfpFnsc44NTY1"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        JOIN TELEGRAM →
+    </a>
+
+    <div class="bottom">
+        © 2026 EARN WITH SANJU
+    </div>
 
 </div>
 
 <script>
-let time=30;
-const timer=document.getElementById("timer");
+let time = 30;
 
-setInterval(()=>{
-if(time>0){
-time--;
-}
-let sec=String(time).padStart(2,"0");
-timer.innerHTML="00:"+sec;
-},1000);
+const timer = document.getElementById("timer");
+
+const countdown = setInterval(function(){
+
+    let seconds = String(time).padStart(2, "0");
+
+    timer.textContent = "00:" + seconds;
+
+    if(time <= 0){
+        clearInterval(countdown);
+
+        timer.textContent = "00:00";
+
+        return;
+    }
+
+    time--;
+
+}, 1000);
 </script>
 
 </body>
