@@ -1,8 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EARN WITH SANJU</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    background:
+        radial-gradient(circle at 50% 0%,#3b2a05 0%,#11100b 35%,#050505 75%);
+    color:#fff;
+}
+
+.card{
+    width:100%;
+    max-width:420px;
+    padding:35px 25px 28px;
+    text-align:center;
+    border-radius:28px;
+    background:linear-gradient(145deg,#23231e,#080808);
+    border:1px solid rgba(212,175,55,.45);
+    box-shadow:0 0 35px rgba(212,175,55,.12),
+               0 25px 70px rgba(0,0,0,.65);
+}
+
 .logo{
-        width:95px;
-        height:95px;
-        font-size:42px;
-    }
+    width:110px;
+    height:110px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:48px;
+    font-weight:900;
+    color:#050505;
+    background:linear-gradient(135deg,#fff2a8,#d4af37,#9c7718,#f6d76b);
+    border:4px solid #f5d76e;
+    box-shadow:0 0 25px rgba(212,175,55,.4);
+}
+
+h1{
+    font-size:29px;
+    font-weight:900;
+    letter-spacing:1px;
+    color:#f5d76e;
+    margin-bottom:12px;
+}
+
+.line{
+    width:75px;
+    height:3px;
+    margin:0 auto 18px;
+    border-radius:10px;
+    background:#d4af37;
+}
+
+.subtitle{
+    color:#cfcfcf;
+    font-size:15px;
+    line-height:1.6;
+    margin-bottom:22px;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 15px;
+    margin-bottom:18px;
+    border-radius:30px;
+    color:#f5d76e;
+    font-size:13px;
+    font-weight:bold;
+    background:rgba(212,175,55,.08);
+    border:1px solid rgba(212,175,55,.3);
+}
+
+.timer-box{
+    padding:16px;
+    margin-bottom:20px;
+    border-radius:16px;
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.timer-title{
+    color:#888;
+    font-size:12px;
+    margin-bottom:5px;
+    letter-spacing:1px;
+}
+
+#timer{
+    font-size:38px;
+    font-weight:900;
+    color:#f5d76e;
+}
+
+.button{
+    display:block;
+    width:100%;
+    padding:17px;
+    border-radius:14px;
+    text-decoration:none;
+    color:#080808;
+    font-size:19px;
+    font-weight:900;
+    background:linear-gradient(135deg,#fff0a0,#d4af37,#a47c16);
+    box-shadow:0 8px 25px rgba(212,175,55,.22);
+}
+
+.button:hover{
+    transform:translateY(-2px);
+}
+
+.bottom{
+    margin-top:18px;
+    color:#666;
+    font-size:11px;
 }
 </style>
 </head>
@@ -38,8 +165,7 @@
         class="button"
         href="https://t.me/+Th0VfpFnsc44NTY1"
         target="_blank"
-        rel="noopener noreferrer"
-    >
+        rel="noopener noreferrer">
         JOIN TELEGRAM →
     </a>
 
@@ -51,26 +177,20 @@
 
 <script>
 let time = 30;
-
 const timer = document.getElementById("timer");
 
 const countdown = setInterval(function(){
 
-    let seconds = String(time).padStart(2, "0");
-
-    timer.textContent = "00:" + seconds;
+    timer.textContent = "00:" + String(time).padStart(2,"0");
 
     if(time <= 0){
         clearInterval(countdown);
-
-        timer.textContent = "00:00";
-
         return;
     }
 
     time--;
 
-}, 1000);
+},1000);
 </script>
 
 </body>
